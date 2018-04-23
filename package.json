@@ -1,0 +1,52 @@
+{
+  "name": "ipfs-host",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:contract": "solium -d contracts/",
+    "lint:contract:fix": "solium -d contracts/ --fix",
+    "compile:local": "rm -rf build/ && truffle compile --network development",
+    "coverage": "./node_modules/.bin/solidity-coverage",
+    "rpc": "ganache-cli --defaultBalanceEther 1000000 --gasPrice 1 --gasLimit 0xfffffffffff --seed --networkId 336",
+    "rpc:rinkeby": "geth --datadir=~/.ethereum --rinkeby --rpc --rpcapi db,eth,net,web3,personal",
+    "test": "truffle test",
+    "copy": "cp -R build/contracts/*.json app/src/contracts/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/powerpiper/host_beta.git"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "smart",
+    "contracts",
+    "lithuania",
+    "ipfs",
+    "hosting"
+  ],
+  "bugs": {
+    "url": "https://github.com/powerpiper/host_beta/issues"
+  },
+  "author": "Tadas Talaikis, PowerPiper Team <info@talaikis.com>",
+  "license": "GPLv3",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "truffle": "^4.1.5",
+    "truffle-contract": "^3.0.4",
+    "truffle-hdwallet-provider": "0.0.3"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.22.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-babel": "^5.0.0",
+    "eslint-plugin-promise": "^3.0.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "ganache-cli": "^6.1.0",
+    "solidity-coverage": "^0.4.15",
+    "solium": "^1.1.6"
+  }
+}
